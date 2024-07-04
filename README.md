@@ -1,46 +1,122 @@
-# Getting Started with Create React App
+# Task Management Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+The Task Management Tool is a web application designed to help users manage their tasks efficiently. Users can create, view, update, and delete tasks, with the ability to set priorities and statuses for each task. 
 
-## Available Scripts
+## Tools Used
+### Frontend:
+* React
+* React Bootstrap
+* Axios
+* React Router
+* Material UI
+* DataTable
+### Backend:
+* Node.js
+* Express
+* MongoDB (Mongoose)
+* JWT (Json Web Token) for authentication
 
-In the project directory, you can run:
+## Setup Instructions
 
-### `npm start`
+### Prerequisites
+Ensure you have the following installed:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Node.js
+* npm (Node Package Manager)
+* MongoDB (you can use a local instance or MongoDB Atlas)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Frontend Setup
+#### 1. Clone the frontend repository:
 
-### `npm test`
+```sh
+git clone <'https://github.com/ShashankAlampally/Taskmanager-Frontend'>
+cd frontend
+```
+#### 2. Install dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm install
+```
 
-### `npm run build`
+#### 3. Start the development server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The frontend server will run on http://localhost:3000.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend Setup
 
-### `npm run eject`
+#### 1.Clone the backend repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+git clone <'https://github.com/ShashankAlampally/Taskmanager-Backend'>
+cd backend
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 2.Install dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### 3.Start the backend server:
 
-## Learn More
+```sh
+npm start
+```
+The backend server will run on http://localhost:5005.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### How to Run the Application
+
+####  1. Start the backend server by following the backend setup instructions.
+####  2. Start the frontend server by following the frontend setup instructions.
+####  3. Open your browser and navigate to http://localhost:3000 to start using the Task Management Tool.
+
+
+## API Documentation
+
+### Authentication:
+#### 1.Signup:
+    Endpoint: 'POST /signup'
+    Description: Register a new user.
+    Body Parameters: 'username','email', 'password'
+#### 2.Login:
+    Endpoint: POST /login
+    Description: Authenticate an existing user.
+    Body Parameters: email, password
+### Tasks:
+#### 1.Create Task:
+    Endpoint: POST /tasks/create
+    Description: Create a new task.
+    Body Parameters: taskName, description, priority, status
+#### 2.View Tasks:
+    Endpoint: GET /tasks/view
+    Headers: x-access-token: <token>
+#### 3.Update Task:
+    Endpoint: PUT /tasks/update/:id
+    Description: Update an existing task.
+    Headers: x-access-token: <token>
+    Body Parameters: taskName, description, priority, status
+#### 4.Delete Task:
+    Endpoint: DELETE /tasks/delete/:id
+    Description: Delete an existing task.
+    Headers: x-access-token: <token>
+
+## Deployment:
+### Backend Deployment:
+  The backend of the Task Management Tool is deployed using Render.
+#### Link:
+```sh
+https://taskmanager-1-29to.onrender.com
+```
+
+### Frontend Deployment:
+  The frontend is deployed using Vercel.
+#### Link:
+```sh
+https://taskmanager-frontend-a68i.vercel.app/
+```
