@@ -1,0 +1,23 @@
+/* MainPage.css */
+
+.container {
+    margin-top: 20px;
+}
+
+.Details {
+    margin-top: 20px;
+}
+
+.Details .rdt_Table {
+    width: 100%;
+    text-align: left;
+}
+
+.Details .rdt_Table .rdt_TableRow .rdt_TableCell {
+    text-align: left; /* Align all table cell text to the left */
+}
+
+.Actions {
+    display: flex;
+    gap: 10px;
+}
